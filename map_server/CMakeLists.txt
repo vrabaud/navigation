@@ -4,7 +4,7 @@ project(map_server)
 find_package(catkin REQUIRED
         COMPONENTS
             roscpp
-            tf
+            tf2_ros
             nav_msgs
         )
 
@@ -28,7 +28,7 @@ catkin_package(
         ${SDL_IMAGE_LIBRARIES}
     CATKIN_DEPENDS
         roscpp
-        tf
+        tf2_ros
         nav_msgs
 )
 

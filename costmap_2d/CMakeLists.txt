@@ -11,13 +11,13 @@ find_package(catkin REQUIRED
             message_filters
             message_generation
             nav_msgs
-            pcl_conversions
-            pcl_ros
             pluginlib
             roscpp
             sensor_msgs
             std_msgs
-            tf
+            tf2_geometry_msgs
+            tf2_ros
+            tf2_sensor_msgs
             visualization_msgs
             voxel_grid
         )
@@ -32,7 +32,6 @@ include_directories(
     include
     ${catkin_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIRS}
-    ${PCL_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
 )
 
@@ -65,7 +64,6 @@ catkin_package(
     INCLUDE_DIRS
         include
         ${EIGEN3_INCLUDE_DIRS}
-        ${PCL_INCLUDE_DIRS}
     LIBRARIES costmap_2d layers
     CATKIN_DEPENDS
         dynamic_reconfigure
@@ -75,16 +73,14 @@ catkin_package(
         message_filters
         message_runtime
         nav_msgs
-        pcl_ros
         pluginlib
         roscpp
         sensor_msgs
         std_msgs
-        tf
+        tf2_ros
         visualization_msgs
         voxel_grid
     DEPENDS
-        PCL
         EIGEN3
         Boost
 )
@@ -103,7 +99,6 @@ add_library(costmap_2d
 )
 add_dependencies(costmap_2d geometry_msgs_generate_messages_cpp)
 target_link_libraries(costmap_2d
-  ${PCL_LIBRARIES}
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
 )

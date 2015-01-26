@@ -5,7 +5,6 @@ find_package(catkin REQUIRED
         COMPONENTS
             cmake_modules
             roscpp
-            tf
             message_generation
             dynamic_reconfigure
             nav_core
@@ -13,6 +12,8 @@ find_package(catkin REQUIRED
             costmap_2d
             pluginlib
             angles
+            tf2_geometry_msgs
+            tf2_ros
         )
 
 find_package(Boost REQUIRED
@@ -61,11 +62,11 @@ catkin_package(
         roscpp
         dynamic_reconfigure
         message_generation
-        tf
         pluginlib
         costmap_2d
         nav_core
         angles
+        tf2_ros
 )
 
 #uncomment for profiling
